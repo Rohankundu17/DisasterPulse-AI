@@ -10,7 +10,7 @@ sentry-sdk[fastapi]
 # ML packages for flood forecasting
 numpy>=1.24.0
 pandas>=2.0.0
-scikit-learn>=1.3.0
+scikit-learn>=1.8.0
 joblib
 # Deep learning (optional - for LSTM model)
 # tensorflow>=2.13.0
