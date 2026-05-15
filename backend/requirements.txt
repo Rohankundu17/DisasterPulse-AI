@@ -15,4 +15,4 @@ joblib
 # Deep learning (optional - for LSTM model)
 # tensorflow>=2.13.0
 # Optional visualization
-matplotlib>=3.7.0
+matplotlib>=3.10.9
