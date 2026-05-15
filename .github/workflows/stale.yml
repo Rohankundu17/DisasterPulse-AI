@@ -1,0 +1,46 @@
+# Stale issue/PR management bot
+name: Stale Issue Manager
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight
+  workflow_dispatch:
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          
+          # Issue settings
+          stale-issue-message: |
+            👋 This issue has been automatically marked as **stale** because it hasn't had any activity in 30 days.
+            
+            - If this is still relevant, please comment or update the issue
+            - It will be closed in 7 days if no further activity occurs
+            
+            Thank you for your contribution to Rescue Ping! 🚨
+            
+          stale-issue-label: 'stale'
+          days-before-issue-stale: 30
+          days-before-issue-close: 7
+          exempt-issue-labels: 'pinned,security,critical,in-progress'
+          
+          # PR settings
+          stale-pr-message: |
+            👋 This PR has been automatically marked as **stale** because it hasn't had any activity in 14 days.
+            
+            - Please rebase and update if you'd like to continue
+            - It will be closed in 7 days if no further activity occurs
+            
+            We appreciate your contribution! 💪
+            
+          stale-pr-label: 'stale'
+          days-before-pr-stale: 14
+          days-before-pr-close: 7
+          exempt-pr-labels: 'pinned,work-in-progress'

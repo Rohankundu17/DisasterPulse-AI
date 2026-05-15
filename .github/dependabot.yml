@@ -1,0 +1,38 @@
+# Dependabot configuration for automated dependency updates
+version: 2
+updates:
+  # NPM dependencies (Frontend)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "bot"
+    commit-message:
+      prefix: "⬆️ deps:"
+
+  # Python dependencies (Backend)
+  - package-ecosystem: "pip"
+    directory: "/backend"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "python"
+      - "bot"
+    commit-message:
+      prefix: "⬆️ deps(py):"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "ci"
+      - "bot"

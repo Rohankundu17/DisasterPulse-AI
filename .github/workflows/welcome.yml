@@ -1,0 +1,46 @@
+# Welcome bot for new contributors
+name: Welcome New Contributors
+
+on:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: |
+            👋 **Welcome to Rescue Ping!** 
+            
+            Thank you for opening your first issue! We're excited to have you here. 🎉
+            
+            **Quick Links:**
+            - 📖 [README](https://github.com/Anshiii-01/rescue-ping#readme)
+            - 🌐 [Live Demo](https://anshiii-01.github.io/rescue-ping)
+            - 💬 Questions? Feel free to ask!
+            
+            Our team will review your issue soon. In the meantime:
+            - ✅ Make sure you've provided all necessary details
+            - 🏷️ We'll add appropriate labels shortly
+            
+            Thanks for helping make disaster management better! 🚨
+            
+          pr-message: |
+            🎉 **Thank you for your first Pull Request!**
+            
+            Welcome to the Rescue Ping community! We really appreciate your contribution. 💪
+            
+            **PR Checklist:**
+            - [ ] Code follows our style guidelines
+            - [ ] Tests pass locally
+            - [ ] Documentation updated (if needed)
+            
+            A maintainer will review your PR soon. Thanks for helping save lives! 🚨❤️
