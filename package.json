@@ -7,7 +7,7 @@
   "description": "AI-Powered Disaster Alert & Emergency Response System. Idea credit: Sameer Dhir (@sameezy667) — https://github.com/sameezy667/Alert-AID",
   "dependencies": {
     "@react-google-maps/api": "^2.20.8",
-    "@react-three/drei": "^10.7.6",
+    "@react-three/drei": "^10.7.8",
     "@react-three/fiber": "^9.3.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
